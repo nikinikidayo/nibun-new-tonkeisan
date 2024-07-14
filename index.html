@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数値計算シミュレータ</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>数値計算シミュレータ</h1>
+    <div class="input-section">
+      <label for="functionInput">関数式:</label>
+      <input type="text" id="functionInput" placeholder="例: x^3 + x - 1">
+      <label for="initialValueNewton">ニュートン法初期値:</label>
+      <input type="number" id="initialValueNewton" placeholder="初期値">
+      <label for="initialValueA">二分法初期値 a:</label>
+      <input type="number" id="initialValueA" placeholder="初期値 a">
+      <label for="initialValueB">二分法初期値 b:</label>
+      <input type="number" id="initialValueB" placeholder="初期値 b">
+      <div class="button-group">
+        <button class="btn newton" onclick="initializeNewton()">ニュートン法</button>
+        <button class="btn bisection" onclick="initializeBisection()">二分法</button>
+      </div>
+    </div>
+    <div id="simulationOutput" class="output-section">
+      <!-- 結果表示エリア -->
+    </div>
+    <div id="convergencePlot" class="plot-section"></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.0.0/math.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
